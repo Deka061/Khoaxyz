@@ -221,12 +221,13 @@ body.dark .avatar{
 .top-controls{
     position: fixed;
     top: 50%;
-    left: calc(50% + 190px); /* 👈 sát card hơn */
+    left: calc(50% + 190px); /* sát card */
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 14px;
-    z-index: 999;
+    z-index: 10000; /* cao hơn loading */
 }
+
 
 
