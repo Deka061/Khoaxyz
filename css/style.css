@@ -221,10 +221,12 @@ body.dark .avatar{
 .top-controls{
     position: fixed;
     top: 50%;
-    left: calc(50% + 230px);
+    left: calc(50% + 190px); /* 👈 sát card hơn */
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 12px; /* 👈 chỉnh số này để xa/gần */
+    gap: 14px;
     z-index: 999;
 }
+
+
