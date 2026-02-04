@@ -1,0 +1,230 @@
+:root{
+    --bg:#f4f6fb;
+    --card:#ffffff;
+    --text:#111;
+    --sub:#555;
+    --btn:#111;
+    --icon-bg:#fff;
+}
+
+body.dark{
+    --bg:radial-gradient(circle at top, #1c1c1c, #000);
+    --card:rgba(255,255,255,0.08);
+    --text:#ffffff;
+    --sub:#ccc;
+    --btn:#fff;
+    --icon-bg:rgba(255,255,255,0.12);
+}
+body{
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.4s;
+}
+.card{
+    position: relative;
+    background:var(--card);
+    max-width:380px;
+    width:100%;
+    padding:26px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.45);
+    backdrop-filter: blur(14px);
+    transition:.4s;
+}
+.links a{
+    display:block;
+    background:var(--btn);
+    color:#fff;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:12px;
+    text-decoration:none;
+    transition:.3s;
+}
+.avatar{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position: center top; /* QUAN TRỌNG */
+    display:block;
+    margin: 0 auto 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.35);
+    border: 3px solid #fff;
+}
+body.dark .links a{
+    background:#222;
+}
+body.dark .avatar{
+    border-color:#222;
+}
+.mode-btn,
+.music-btn{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:var(--card);
+    color:var(--text);
+    font-size:20px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.4);
+    transition:.3s;
+}
+.social-bar{
+    position:absolute;
+    left:-70px;
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.social-bar a{
+    width:56px;
+    height:56px;
+    background:var(--icon-bg);
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 22px rgba(0,0,0,.45);
+    transition:.3s;
+}
+
+.social-bar img{
+    width:30px;
+    height:30px;
+}
+
+.social-bar a:hover{
+    transform:translateX(-6px) scale(1.1);
+    box-shadow:0 0 18px rgba(0,150,255,.6);
+}
+@media (max-width: 768px){
+        .avatar{
+        width:110px;
+        height:110px;
+        border-radius:50%;
+        object-fit:cover;
+        object-position: 50% 20%;
+    }
+    body{
+        padding: 20px;
+    }
+
+    .card{
+        max-width: 320px;
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    /* ẢNH KHÔNG BỊ DÀI */
+    .avatar{
+        width: 110px;
+        height: 110px;
+    }
+
+    /* SOCIAL ICON ĐƯA XUỐNG DƯỚI */
+    .social-bar{
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 15px;
+        transform: none;
+    }
+
+    .social-bar a{
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+    }
+
+    .social-bar img{
+        width: 24px;
+        height: 24px;
+    }
+
+    /* NÚT MODE + MUSIC DỊCH RA RÌA */
+    .top-controls{
+        top: 15px;
+        right: 15px;
+    }
+
+    .mode-btn,
+    .music-btn{
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+#loading{
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.dots{
+    display: flex;
+    gap: 8px;
+}
+
+.dots span{
+    width: 12px;
+    height: 12px;
+    background: var(--text);
+    border-radius: 50%;
+    animation: bounce 0.6s infinite alternate;
+}
+
+.dots span:nth-child(2){
+    animation-delay: .2s;
+}
+.dots span:nth-child(3){
+    animation-delay: .4s;
+}
+
+.loading-text{
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--sub);
+}
+
+@keyframes bounce{
+    from{
+        transform: translateY(0);
+        opacity: .5;
+    }
+    to{
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+/* ẨN CARD BAN ĐẦU */
+.hidden{
+    display: none;
+}
+.top-controls{
+    position: fixed;
+    top: 50%;
+    left: calc(50% + 230px);
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* 👈 chỉnh số này để xa/gần */
+    z-index: 999;
+}

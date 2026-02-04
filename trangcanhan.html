@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang cá nhân</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- LOADING -->
+    <div id="loading">
+        <div class="dots">
+            <span></span><span></span><span></span>
+        </div>
+        <p class="loading-text">Loading...</p>
+    </div>
+
+    <!-- CARD -->
+    <div class="card hidden">
+        <img src="https://i.ibb.co/Fqmf8HpJ/anh-toi.jpg" class="avatar">
+
+        <h1>Khoa</h1>
+        <div class="subtitle">Sinh viên | Lập trình máy tính</div>
+        <p class="about">Xin chào! Đây là trang web cá nhân của tôi.</p>
+
+<div class="social-bar">
+    <a href="https://www.facebook.com/khoa.ang.888091" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+    </a>
+
+    <a href="https://zalo.me/0347211801" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="">
+    </a>
+
+    <a href="mailto:khoaxyz08@gmail.com">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+    </a>
+
+    <a href="https://www.tiktok.com/@404_htdkxyz" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+    </a>
+</div>
+
+        <footer>© 2026 Trang cá nhân</footer>
+    </div>
+
+    <!-- NÚT TRÊN GÓC -->
+    <div class="top-controls">
+        <div class="mode-btn" onclick="toggleMode()">🌙</div>
+        <div class="music-btn" onclick="toggleMusic()">🎵</div>
+    </div>
+
+    <!-- NHẠC -->
+    <audio id="bgm" loop>
+        <source src="music/lofi.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
